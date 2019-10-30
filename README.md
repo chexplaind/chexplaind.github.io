@@ -1,8 +1,12 @@
 # The Literal Chinese Dictionary
 
+The goal of this project is to showcase some of the depth and accidental humour hidden in the Chinese Language today.
+
 ## Content Contributions
 
-Please go to the [data repository here](https://github.com/chexplaind/chexplaindata).
+Entries are curated manually at the moment. 
+
+To see them and contribute, please go to the [data repository here](https://github.com/chexplaind/chexplaindata).
 
 ## Development Setup
 
