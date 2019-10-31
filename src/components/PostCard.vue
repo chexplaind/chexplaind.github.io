@@ -11,17 +11,23 @@
       <div class="words">
         <p class="titlezh">{{post.titleZh}}</p>
         <p class="pinyin">
-          [MAN]&ensp;{{post.pinyin}}
-          <br />
-          [CAN]&ensp;{{post.jyutping}}
+          <span v-if="!!post.pinyin">[MAN]&ensp;{{post.pinyin}}</span>
+          <br v-if="!!post.jyutping" />
+          <span v-if="!!post.jyutping">[CAN]&ensp;{{post.jyutping}}</span>
+          <br v-if="!!post.tailo" />
+          <span v-if="!!post.tailo">[HOK]&ensp;{{post.tailo}}</span>
         </p>
         <p class="titleEn">[EN]&ensp;{{post.titleEn}}, or</p>
         <p class="explanation">{{post.explanation}}</p>
       </div>
     </v-card>
     <v-chip-group column class="tags-container">
-      <router-link v-for="tag in post.tags" :key="tag" :to="{ name: 'tag', params: { tagName: tag }}">
-      <v-chip link class="tag">{{ prettifyTag(tag) }}</v-chip>
+      <router-link
+        v-for="tag in post.tags"
+        :key="tag"
+        :to="{ name: 'tag', params: { tagName: tag }}"
+      >
+        <v-chip link class="tag">{{ prettifyTag(tag) }}</v-chip>
       </router-link>
     </v-chip-group>
     <p class="credit">{{post.credit}}</p>
@@ -34,8 +40,8 @@ export default {
   props: {
     post: Object
   },
-  methods:{
-    prettifyTag(tagName){
+  methods: {
+    prettifyTag(tagName) {
       tagName = tagName.replace("_", " ").replace("2", "-to-");
       return tagName;
     }
@@ -59,9 +65,9 @@ export default {
 .tags-container {
   margin: 6px 0;
 }
- .tag {
-   text-transform: capitalize;
- }
+.tag {
+  text-transform: capitalize;
+}
 
 div.icons {
   margin-bottom: 9px;
@@ -90,7 +96,7 @@ p.titlezh {
 p.pinyin {
   display: inline-block;
   text-align: left;
-  font-size: 0.75em;
+  font-size: 0.65em;
   color: grey;
   margin-left: 0.25em;
 }

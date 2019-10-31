@@ -3,7 +3,7 @@
     <p class="breadcrumbs">
       <router-link :to="{ name: 'home'}">Home</router-link>&nbsp;>&nbsp;Tag
     </p>
-    <PostGrid :title="prettifyTag(tag)" :fetchUrl="tagUrl" showCount />
+    <PostGrid :title="expandTag(tag)" :fetchUrl="tagUrl" showCount />
   </div>
 </template>
 
@@ -45,7 +45,7 @@ export default {
         this.tag = tagName;
       }
     },
-    prettifyTag(tagName) {
+    expandTag(tagName) {
       tagName = tagName.replace("_", " ");
       if (tagName === "E2C")
         return "E-to-C: Translated from Foreign Language to Chinese";
