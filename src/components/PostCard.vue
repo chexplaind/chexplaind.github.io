@@ -9,16 +9,20 @@
         />
       </div>
       <div class="words">
-        <p class="titlezh">{{post.titleZh}}</p>
-        <p class="pinyin">
-          <span v-if="!!post.pinyin">[MAN]&ensp;{{post.pinyin}}</span>
-          <br v-if="!!post.jyutping" />
-          <span v-if="!!post.jyutping">[CAN]&ensp;{{post.jyutping}}</span>
-          <br v-if="!!post.tailo" />
-          <span v-if="!!post.tailo">[HOK]&ensp;{{post.tailo}}</span>
-        </p>
-        <p class="titleEn">[EN]&ensp;{{post.titleEn}}, or</p>
-        <p class="explanation">{{post.explanation}}</p>
+        <div class="levelZh">
+          <p class="titleZh">{{post.titleZh}}</p>
+          <p class="pinyin">
+            <span v-if="!!post.pinyin">[MAN]&ensp;{{post.pinyin}}</span>
+            <br v-if="!!post.jyutping" />
+            <span v-if="!!post.jyutping">[CAN]&ensp;{{post.jyutping}}</span>
+            <br v-if="!!post.tailo" />
+            <span v-if="!!post.tailo">[HOK]&ensp;{{post.tailo}}</span>
+          </p>
+        </div>
+        <div class="levelEn">
+          <p class="titleEn">[EN]&ensp;{{post.titleEn}}, or</p>
+          <p class="explanation">{{post.explanation}}</p>
+        </div>
       </div>
     </v-card>
     <v-chip-group column class="tags-container">
@@ -86,19 +90,21 @@ div.words {
   padding: 0 9%;
 }
 
-p.titlezh {
+p.titleZh {
   display: inline-block;
   text-align: left;
-  margin-right: 0.2em;
-  font-size: 2.5em;
+  margin: 0 0.2em 0 0;
+  font-size: 2.65em;
+  vertical-align: middle;
 }
 
 p.pinyin {
   display: inline-block;
   text-align: left;
-  font-size: 0.65em;
+  font-size: 0.67em;
   color: grey;
-  margin-left: 0.25em;
+  margin: 1em 0 0 0.25em;
+  vertical-align: middle;
 }
 
 p.titleEn {
