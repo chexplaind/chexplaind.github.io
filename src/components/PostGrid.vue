@@ -3,7 +3,7 @@
     <v-divider />
     <v-subheader inset class="caps">
       {{ title }}
-      <span v-if="showCount"> ({{posts.length}} entries)</span>
+      <span v-if="showCount">&nbsp;({{posts.length}} entries)</span>
     </v-subheader>
     <v-divider />
     <v-progress-linear v-if="loading" indeterminate />
