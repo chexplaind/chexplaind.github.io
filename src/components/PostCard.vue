@@ -10,7 +10,7 @@
       </div>
       <div class="words">
         <div class="levelZh">
-          <p class="titleZh" :style="bestTitleColor(post.backgroundHex)">{{post.titleZh}}</p>
+          <p class="titleZh">{{post.titleZh}}</p>
           <p class="pinyin">
             <span v-if="!!post.pinyin">[MAN]&ensp;{{post.pinyin}}</span>
             <br v-if="!!post.jyutping" />
@@ -21,7 +21,7 @@
         </div>
         <div class="levelEn">
           <p class="titleEn">[EN]&ensp;{{post.titleEn}}, or</p>
-          <p class="explanation" :style="bestTitleColor(post.backgroundHex)">{{post.explanation}}</p>
+          <p class="explanation">{{post.explanation}}</p>
         </div>
       </div>
     </v-card>
@@ -39,33 +39,15 @@
 </template>
 
 <script>
-import tinycolor from "tinycolor2";
-
 export default {
   name: "PostCard",
   props: {
     post: Object
   },
-  data: function() {
-    return {
-      titleDark: {
-        color: "default"
-      },
-      titleLight: {
-        color: "white"
-      }
-    };
-  },
   methods: {
     prettifyTag(tagName) {
       tagName = tagName.replace("_", " ").replace("2", "-to-");
       return tagName;
-    },
-    bestTitleColor(backgroundHex) {
-      var color = tinycolor(backgroundHex).toRgb();
-      var lumen =
-        (0.2126 * color.r + 0.7152 * color.g + 0.0722 * color.b) * color.a;
-      return lumen > 0.179 ? this.titleDark : this.titleLight;
     }
   }
 };
