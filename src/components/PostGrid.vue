@@ -10,19 +10,22 @@
     <p v-else-if="!posts.length" id="no-results">No results found.</p>
     <v-row id="grid" v-else align-content="center" justify="center">
       <v-col v-for="post in posts" :key="post.titleEn" cols="12" md="6" lg="4" xl="3">
-        <PostCard :post="post" />
+        <MTRCard v-if="post.tags.includes('MTR')" :post="post" />
+        <PostCard v-else :post="post" />
       </v-col>
     </v-row>
   </div>
 </template>
 
 <script>
-import PostCard from "./PostCard.vue";
+import PostCard from "./PostCard";
+import MTRCard from "./MTRCard"
 
 export default {
   name: "PostGrid",
   components: {
-    PostCard
+    PostCard,
+    MTRCard
   },
   data() {
     return {

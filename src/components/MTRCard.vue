@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card class="card" :style="{'background': post.backgroundHex}">
+    <v-card class="card" :style="{'background-color': post.backgroundHex}">
       <div class="icons">
         <img
           v-for="icon in post.icons"
@@ -11,16 +11,16 @@
       <div class="words">
         <div class="levelZh">
           <p class="titleZh" :style="bestTitleColor(post.backgroundHex)">{{post.titleZh}}</p>
-          <p class="pinyin">
+          <!-- <p class="pinyin">
             <span v-if="!!post.pinyin">[MAN]&ensp;{{post.pinyin}}</span>
             <br v-if="!!post.jyutping" />
             <span v-if="!!post.jyutping">[CAN]&ensp;{{post.jyutping}}</span>
             <br v-if="!!post.tailo" />
             <span v-if="!!post.tailo">[HOK]&ensp;{{post.tailo}}</span>
-          </p>
+          </p>-->
         </div>
         <div class="levelEn">
-          <p class="titleEn">[EN]&ensp;{{post.titleEn}}, or</p>
+          <!-- <p class="titleEn">[EN]&ensp;{{post.titleEn}}, or</p> -->
           <p class="explanation" :style="bestTitleColor(post.backgroundHex)">{{post.explanation}}</p>
         </div>
       </div>
@@ -42,7 +42,7 @@
 import tinycolor from "tinycolor2";
 
 export default {
-  name: "PostCard",
+  name: "MTRCard",
   props: {
     post: Object
   },
@@ -72,18 +72,6 @@ export default {
 </script>
 
 <style scoped>
-.card {
-  padding: 7vh 0;
-  min-width: 355px;
-}
-
-.credit {
-  display: block;
-  text-align: left;
-  color: lightgray;
-  font-size: 0.75em;
-}
-
 .tags-container {
   margin: 6px 0;
 }
@@ -92,50 +80,53 @@ export default {
   text-transform: capitalize;
 }
 
-div.icons {
-  margin-bottom: 9px;
-}
-
-div.icons > img {
-  margin: 2%;
-  width: 90px;
-  max-width: 25%;
-}
-
 div.words {
-  display: inline-block;
   margin: 0 auto;
-  text-align: left;
-  padding: 0 9%;
+  text-align: center;
+  line-height: 0.9;
+  padding: 27% 9%;
 }
 
 p.titleZh {
-  display: inline-block;
-  text-align: left;
-  margin: 0 0.2em 0 0;
-  font-size: 2.65em;
-  vertical-align: middle;
-}
-
-p.pinyin {
-  display: inline-block;
-  text-align: left;
-  font-size: 0.67em;
-  color: grey;
-  margin: 1em 0 0 0.25em;
-  vertical-align: middle;
-}
-
-p.titleEn {
-  display: block;
-  font-size: 0.75em;
-  color: grey;
-  margin: 0.75em 0 0.5em 0.25em;
+  font-size: 3.75em;
+  font-weight: 800;
+  font-family: "Noto Serif TC", sans-serif;
 }
 
 p.explanation {
-  text-align: left;
-  font-size: 1.8em;
-  margin-bottom: 0.25em;
+  font-size: 1.75em;
+  font-weight: 900;
+  font-family: "PT Sans", Helvetica, sans-serif;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  background-size: 25px 25px;
+  background-repeat: repeat;
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      rgba(255, 255, 255, 0.25) 25%,
+      rgba(255, 255, 255, 0.25) 26%,
+      transparent 27%,
+      transparent 74%,
+      rgba(255, 255, 255, 0.25) 75%,
+      rgba(255, 255, 255, 0.25) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      rgba(255, 255, 255, 0.25) 25%,
+      rgba(255, 255, 255, 0.25) 26%,
+      transparent 27%,
+      transparent 74%,
+      rgba(255, 255, 255, 0.25) 75%,
+      rgba(255, 255, 255, 0.25) 76%,
+      transparent 77%,
+      transparent
+    );
 }
 </style>
