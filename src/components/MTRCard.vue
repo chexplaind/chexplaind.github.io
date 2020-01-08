@@ -63,7 +63,7 @@ export default {
       var g = parseInt(hexcolor.substr(2, 2), 16);
       var b = parseInt(hexcolor.substr(4, 2), 16);
       var yiq = (r * 299 + g * 587 + b * 114) / 1000;
-      return yiq >= 150 ? "default" : "WhiteSmoke";
+      return yiq >= 130 ? "default" : "WhiteSmoke";
     }
   }
 };
@@ -93,6 +93,7 @@ div.details {
 
 p.titleZh {
   font-size: 3.9em;
+  letter-spacing: 0.1em;
   font-weight: 750;
   font-family: "Noto Serif TC", sans-serif;
 }
@@ -122,24 +123,24 @@ p.pinyin {
   background-image: linear-gradient(
       0deg,
       transparent 24%,
-      rgba(255, 255, 255, 0.35) 25%,
-      rgba(255, 255, 255, 0.35) 26%,
+      rgba(96, 96, 96, 0.5) 25%,
+      rgba(96, 96, 96, 0.5) 26%,
       transparent 27%,
       transparent 74%,
-      rgba(255, 255, 255, 0.35) 75%,
-      rgba(255, 255, 255, 0.35) 76%,
+      rgba(96, 96, 96, 0.5) 75%,
+      rgba(96, 96, 96, 0.5) 76%,
       transparent 77%,
       transparent
     ),
     linear-gradient(
       90deg,
       transparent 24%,
-      rgba(255, 255, 255, 0.35) 25%,
-      rgba(255, 255, 255, 0.35) 26%,
+      rgba(96, 96, 96, 0.5) 25%,
+      rgba(96, 96, 96, 0.5) 26%,
       transparent 27%,
       transparent 74%,
-      rgba(255, 255, 255, 0.35) 75%,
-      rgba(255, 255, 255, 0.35) 76%,
+      rgba(96, 96, 96, 0.5) 75%,
+      rgba(96, 96, 96, 0.5) 76%,
       transparent 77%,
       transparent
     );
