@@ -26,7 +26,12 @@
           <v-chip label link>Europe</v-chip>
         </router-link>
       </v-chip-group>
-      <p>These could be translated by mimicking pronunciations, coined by meaning, or original Chinese names romanised into English.</p>
+      <p>
+        These could be translated by
+        <router-link :to="{ name: 'tag', params: { tagName: 'E2C' }}">mimicking pronunciations</router-link>, coined by
+        <router-link :to="{ name: 'tag', params: { tagName: 'meaning' }}">meaning</router-link>, or original Chinese names
+        <router-link :to="{ name: 'tag', params: { tagName: 'C2E' }}">romanised into English</router-link>.
+      </p>
     </div>
   </div>
 </template>

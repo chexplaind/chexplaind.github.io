@@ -78,6 +78,13 @@ export default {
   text-transform: capitalize;
 }
 
+.credit {
+  display: block;
+  text-align: left;
+  color: lightgray;
+  font-size: 0.75em;
+}
+
 div.words {
   margin: 0 auto;
   text-align: center;
