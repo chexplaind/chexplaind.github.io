@@ -7,33 +7,7 @@
       <span class="grey--text">直譯詞典</span>
     </h1>
     <v-divider class="fat-divider" />
-    <div class="about-content">
-      <h3>What happens when you literally translate words into Chinese?</h3>
-      <p>This is a collection of literal meanings of Chinese words for common places, objects, or phrases, eg.</p>
-      <v-chip-group class="tags-container">
-        <router-link :to="{ name: 'tag', params: { tagName: 'countries' }}">
-          <v-chip label link>Countries</v-chip>
-        </router-link>
-        <router-link :to="{ name: 'tag', params: { tagName: 'cities' }}">
-          <v-chip label link>Cities</v-chip>
-        </router-link>
-        <router-link :to="{ name: 'tag', params: { tagName: 'food' }}">
-          <v-chip label link>Food</v-chip>
-        </router-link>
-        <router-link :to="{ name: 'tag', params: { tagName: 'china' }}">
-          <v-chip label link>China</v-chip>
-        </router-link>
-        <router-link :to="{ name: 'tag', params: { tagName: 'europe' }}">
-          <v-chip label link>Europe</v-chip>
-        </router-link>
-      </v-chip-group>
-      <p>
-        These could be translated by
-        <router-link :to="{ name: 'tag', params: { tagName: 'E2C' }}">mimicking pronunciations</router-link>, coined by
-        <router-link :to="{ name: 'tag', params: { tagName: 'meaning' }}">meaning</router-link>, or original Chinese names
-        <router-link :to="{ name: 'tag', params: { tagName: 'C2E' }}">romanised into English</router-link>.
-      </p>
-    </div>
+    
   </div>
 </template>
 
@@ -56,11 +30,6 @@ export default {
 
 .fat-divider {
   margin: 1em 0;
-}
-
-.about-content {
-  text-align: left;
-  margin-bottom: 1.5em;
 }
 
 .tags-container {

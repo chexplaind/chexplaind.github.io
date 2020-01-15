@@ -2,6 +2,7 @@
   <v-app id="app">
     <v-content class="app-content">
       <Header />
+      <About />
       <div id="search-results-container">
         <PostGrid
           v-if="sharedState.searchUrl.length"
@@ -19,6 +20,7 @@
 
 <script>
 import Header from "./components/Header";
+import About from "./components/About";
 import PostGrid from "./components/PostGrid";
 import Footer from "./components/Footer";
 import Toolbar from "./components/Toolbar";
@@ -29,6 +31,7 @@ export default {
   name: "App",
   components: {
     Header,
+    About,
     PostGrid,
     Footer,
     Toolbar

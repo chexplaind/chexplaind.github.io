@@ -1,8 +1,8 @@
 <template>
   <div>
-    <p class="breadcrumbs">
+    <h2 class="breadcrumbs subtitle-2">
       <router-link :to="{ name: 'home'}">Home</router-link>&nbsp;>&nbsp;Tag
-    </p>
+    </h2>
     <PostGrid :title="expandTag(tag)" :fetchUrl="tagUrl" showCount />
   </div>
 </template>
