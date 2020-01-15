@@ -89,7 +89,6 @@ div.words {
   margin: 0 auto;
   text-align: center;
   line-height: 0.9;
-  /* color: #eaeeea; */
   text-shadow: 0.5px 0.5px #696969;
   padding: 30% 10%;
 }
