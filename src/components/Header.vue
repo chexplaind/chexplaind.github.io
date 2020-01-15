@@ -8,7 +8,8 @@
     </h1>
     <v-divider class="fat-divider" />
     <div class="about-content">
-      <p>A collection of literal meanings of Chinese words for common places, objects, or phrases, eg.</p>
+      <h3>What happens when you literally translate words into Chinese?</h3>
+      <p>This is a collection of literal meanings of Chinese words for common places, objects, or phrases, eg.</p>
       <v-chip-group class="tags-container">
         <router-link :to="{ name: 'tag', params: { tagName: 'countries' }}">
           <v-chip label link>Countries</v-chip>
