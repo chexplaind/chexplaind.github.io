@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+HK|PT+Sans|Noto+Serif+TC&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+HK|Noto+Serif+TC&display=swap');
 
 #app {
   font-family: "Noto Sans HK", sans-serif;
