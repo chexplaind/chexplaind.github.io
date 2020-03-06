@@ -25,7 +25,7 @@ export default {
   },
   computed: {
     tagUrl: function() {
-      return constants.apiBaseUrl + constants.apiGetTagPath + this.tag;
+      return constants.apiBaseUrl + constants.apiGetByTagPath + this.tag;
     }
   },
   data() {

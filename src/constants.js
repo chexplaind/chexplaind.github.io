@@ -4,6 +4,7 @@ const constants = {
     apiAutocompletePath: "Autocomplete?name=",
     apiGetLatestsPath: "GetLatest?number=",
     apiCountPath: "Count",
-    apiGetTagPath: "GetTag?tag=",
+    apiGetByTagPath: "GetByTag?tag=",
+    apiMachineryPath: "Machinery?term="
 }
 export default constants;
