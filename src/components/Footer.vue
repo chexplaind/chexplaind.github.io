@@ -5,9 +5,14 @@
       <a
         href="https://creativecommons.org/licenses/by-nc/4.0/"
         target="_blank"
+        rel="noreferrer"
       >CC BY-NC 4.0</a> license
       <br />Based on personal research and interpretations, Chinese characters often have multiple meanings.
-      <a href="https://github.com/chexplaind/chexplaindata" target="_blank">Contribute here.</a>
+      <a
+        href="https://github.com/chexplaind/chexplaindata"
+        target="_blank"
+        rel="noreferrer"
+      >Contribute here.</a>
     </span>
     <p class="footer-text caption">
       <img class="tinyIcon" src="https://chexplaindata.blob.core.windows.net/icons/logo_gram.svg" />
@@ -15,6 +20,7 @@
       <a
         href="https://dtylam.github.io"
         target="_blank"
+        rel="noreferrer"
       >@dtylam</a>
     </p>
   </div>
