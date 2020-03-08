@@ -8,6 +8,7 @@
         <v-row justify="space-between">
           <v-card-title>
             <v-icon>{{mdiRobot}}</v-icon>
+            <span class="text-uppercase titleEn caption">{{"[" +responseSourceLanguage +"]"}}</span>
             &nbsp;
             {{searchTerm}}
           </v-card-title>
@@ -56,6 +57,7 @@ export default {
       isError: false,
       responseTitleZh: "",
       responseCharacters: [],
+      responseSourceLanguage: "",
       constants: constants,
       mdiClose: mdiClose,
       mdiRobot: mdiRobot,
@@ -100,9 +102,9 @@ export default {
           this.isLoading = false;
           this.responseTitleZh = json.titleZh;
           this.responseCharacters = json.characters;
+          this.responseSourceLanguage = json.sourceLanguage;
         })
         .catch(error => {
-          console.error("Backend Error:", error);
           this.isLoading = false;
           this.isError = true;
         });
@@ -121,13 +123,18 @@ export default {
   margin: 1.5em 0;
 }
 
-.error-status{
+.error-status {
   padding: 16px;
-  background: #FFCDD2aa;
-  border-radius: 8px;
+  background: #ffcdd2aa;
+  border-radius: 6px;
 }
 
-.caption {
+.titleEn {
+  font-size: 0.75em;
+  color: grey;
+}
+
+p.caption {
   color: lightgrey;
 }
 </style>
