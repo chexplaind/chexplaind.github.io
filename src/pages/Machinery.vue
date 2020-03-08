@@ -1,10 +1,27 @@
 <template>
   <v-card>
-    <v-card-title>{{searchTerm}}</v-card-title>
-    <v-btn icon>
-      <v-icon>{{mdiClose}}</v-icon>
-    </v-btn>
-    <CharacterCard />
+    <v-container>
+      <v-row justify="space-between">
+        <v-card-title>
+          <v-icon>{{mdiRobot}}</v-icon>
+          &nbsp;
+          {{searchTerm}}
+        </v-card-title>
+        <router-link :to="{ name: 'home'}">
+          <v-btn text>
+            back to home
+            <v-icon>{{mdiClose}}</v-icon>
+          </v-btn>
+        </router-link>
+      </v-row>
+      <CharacterCard
+        v-for="(character, index) in responseCharacters"
+        :key="character.symbol+index"
+        :character="character.symbol"
+        :explanation="character.explanation"
+        :pinyin="character.pinyin"
+      />
+    </v-container>
   </v-card>
 </template>
 
@@ -12,7 +29,7 @@
 import constants from "../constants";
 import store from "../store";
 import CharacterCard from "../components/CharacterCard";
-import { mdiClose } from "@mdi/js";
+import { mdiClose, mdiRobot } from "@mdi/js";
 
 export default {
   name: "Recent",
@@ -26,7 +43,8 @@ export default {
       responseCharacters: [],
       isLoading: false,
       constants: constants,
-      mdiClose: mdiClose
+      mdiClose: mdiClose,
+      mdiRobot: mdiRobot
     };
   },
   created: function() {
@@ -55,12 +73,11 @@ export default {
         method: "GET",
         cache: "default"
       })
-        .then(response => {
-          console.log(response);
-          response.json();
-        })
+        .then(response => response.json())
         .then(json => {
           this.isLoading = false;
+          this.responseTitleZh = json.titleZh;
+          this.responseCharacters = json.characters;
         })
         .catch(error => {
           console.error("Backend Error:", error);

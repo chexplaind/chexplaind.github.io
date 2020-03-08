@@ -5,6 +5,7 @@
       <span class="grey--text d-none d-lg-flex">&nbsp;| 直譯詞典</span>
     </v-toolbar-title>
     <v-spacer class="d-none d-md-flex" />
+    <v-icon>{{mdiMagnify}}</v-icon>
     <SearchBox />
     <v-spacer />
     <InstagramBadge />
@@ -14,12 +15,18 @@
 <script>
 import InstagramBadge from "./InstagramBadge.vue";
 import SearchBox from "./SearchBox.vue";
+import { mdiMagnify } from "@mdi/js";
 
 export default {
   name: "Toolbar",
   components: {
     InstagramBadge,
     SearchBox
+  },
+  data(){
+    return {
+      mdiMagnify: mdiMagnify
+    }
   }
 };
 </script>

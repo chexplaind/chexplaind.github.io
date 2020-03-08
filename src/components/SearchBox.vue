@@ -119,6 +119,8 @@ export default {
 <style scoped>
 #search-container {
   padding: 0px 5px;
+  width: 80%;
+  max-width: 600px;
 }
 
 #search-title {
