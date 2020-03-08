@@ -52,7 +52,6 @@ export default {
       this.loading = true;
       fetch(url, {
         method: "GET",
-        mode: "cors",
         cache: "default"
       })
         .then(response => response.json())

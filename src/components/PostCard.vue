@@ -57,6 +57,8 @@ export default {
 .card {
   padding: 7vh 0;
   min-width: 355px;
+  max-width: 640px;
+  margin: auto;
 }
 
 .credit {

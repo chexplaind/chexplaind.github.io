@@ -90,7 +90,6 @@ export default {
           encodeURIComponent(name),
         {
           method: "GET",
-          mode: "cors",
           cache: "default"
         }
       )
