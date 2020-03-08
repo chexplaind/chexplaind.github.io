@@ -76,9 +76,7 @@ export default {
             constants.apiSearchPath +
             encodeURIComponent(name)
         );
-        document
-          .getElementById("search-results-container")
-          .scrollIntoView(true);
+        window.scrollTo(0, 320);
       }
     },
     doAutocomplete(name) {

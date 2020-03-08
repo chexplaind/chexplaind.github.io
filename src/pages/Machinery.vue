@@ -108,7 +108,7 @@ export default {
 
 <style scoped>
 #machinery-container {
-  max-width: 640px;
+  max-width: 600px;
   margin: auto;
 }
 
