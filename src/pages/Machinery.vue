@@ -1,12 +1,9 @@
 <template>
   <div id="machinery-container">
     <v-divider />
-    <v-subheader inset class="caps">
-      {{ title }}
-      <span v-if="showCount">&nbsp;({{posts.length}} entries)</span>
-    </v-subheader>
+    <v-subheader inset class="caps">Machinery</v-subheader>
     <v-divider />
-    <v-card>
+    <v-card class="machinery-card">
       <v-container>
         <v-row justify="space-between">
           <v-card-title>
@@ -21,8 +18,12 @@
             </v-btn>
           </router-link>
         </v-row>
-        <v-list>
-          <v-divider></v-divider>
+        <v-progress-circular v-if="isLoading" indeterminate color="primary" />
+        <div v-else-if="isError" class="d-flex align-center error-status">
+          <v-icon>{{mdiHeartBroken}}</v-icon>&ensp;machine translation did not work for this search term :(
+        </div>
+        <v-list v-else>
+          <v-divider />
           <CharacterCard
             v-for="(character, index) in responseCharacters"
             :key="character.symbol+index"
@@ -41,7 +42,7 @@
 import constants from "../constants";
 import store from "../store";
 import CharacterCard from "../components/CharacterCard";
-import { mdiClose, mdiRobot } from "@mdi/js";
+import { mdiClose, mdiRobot, mdiHeartBroken } from "@mdi/js";
 
 export default {
   name: "Recent",
@@ -51,12 +52,14 @@ export default {
   data() {
     return {
       searchTerm: "",
+      isLoading: false,
+      isError: false,
       responseTitleZh: "",
       responseCharacters: [],
-      isLoading: false,
       constants: constants,
       mdiClose: mdiClose,
-      mdiRobot: mdiRobot
+      mdiRobot: mdiRobot,
+      mdiHeartBroken: mdiHeartBroken
     };
   },
   created: function() {
@@ -87,6 +90,7 @@ export default {
     fetchApi(url) {
       if (url === undefined || url === null || url === "") return;
       this.isLoading = true;
+      this.isError = false;
       fetch(url, {
         method: "GET",
         cache: "default"
@@ -100,6 +104,7 @@ export default {
         .catch(error => {
           console.error("Backend Error:", error);
           this.isLoading = false;
+          this.isError = true;
         });
     }
   }
@@ -110,6 +115,16 @@ export default {
 #machinery-container {
   max-width: 600px;
   margin: auto;
+}
+
+.machinery-card {
+  margin: 1.5em 0;
+}
+
+.error-status{
+  padding: 16px;
+  background: #FFCDD2aa;
+  border-radius: 8px;
 }
 
 .caption {

@@ -15,10 +15,10 @@
       <template v-slot:no-data>
         <v-list-item>
           <v-list-item-title class="text-left">
-            No results for "{{autocompleteTerm}}".
-            <router-link
+            No results for "{{autocompleteTerm}}".<br/>
+            <router-link class="caption"
               :to="{ name: 'machinery', params: { searchTerm: autocompleteTerm }}"
-            >Try machine?</router-link>
+            >Try machine translation?</router-link>
           </v-list-item-title>
           <v-list-item-action>
             <router-link :to="{ name: 'machinery', params: { searchTerm: autocompleteTerm }}">
@@ -76,7 +76,7 @@ export default {
             constants.apiSearchPath +
             encodeURIComponent(name)
         );
-        window.scrollTo(0, 320);
+        window.scrollTo(0, 330);
       }
     },
     doAutocomplete(name) {
