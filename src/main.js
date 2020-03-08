@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import vuetify from './plugins/vuetify';
 import VueRouter from 'vue-router';
-import App from './App.vue';
-import Tag from './pages/Tag.vue';
-import Recent from './pages/Recent.vue';
+import App from './App';
+import Tag from './pages/Tag';
+import Recent from './pages/Recent';
+import Machinery from './pages/Machinery';
 
 Vue.config.productionTip = false;
 
@@ -11,7 +12,8 @@ Vue.use(VueRouter);
 
 const routes = [
   { path: "/", name: "home", component: Recent },
-  { path: "/tags/:tagName", name: "tag", component: Tag }
+  { path: "/tags/:tagName", name: "tag", component: Tag },
+  { path: "/machinery/:searchTerm", name: "machinery", component: Machinery }
 ];
 
 const router = new VueRouter({

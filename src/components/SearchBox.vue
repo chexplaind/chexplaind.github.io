@@ -11,13 +11,21 @@
       :hide-no-data="!!autocompleteResults.length || !autocompleteTerm"
       outlined
       placeholder="Type here to search me..."
-      append-icon="mdi-magnify"
     >
       <template v-slot:no-data>
         <v-list-item>
           <v-list-item-title class="text-left">
-            No results for "{{autocompleteTerm}}"
+            No results for "{{autocompleteTerm}}".
+            <router-link
+              :to="{ name: 'machinery', params: { searchTerm: autocompleteTerm }}"
+            >Try machine?</router-link>
           </v-list-item-title>
+          <v-list-item-action>
+            <router-link :to="{ name: 'machinery', params: { searchTerm: autocompleteTerm }}">
+              <v-icon>{{mdiRobot}}</v-icon>
+              <v-chip x-small link>alpha</v-chip>
+            </router-link>
+          </v-list-item-action>
         </v-list-item>
       </template>
       <template v-slot:item="{ item }">
@@ -25,7 +33,7 @@
           <v-list-item-title v-text="item" class="text-left"></v-list-item-title>
         </v-list-item-content>
         <v-list-item-action>
-          <v-icon>mdi-cloud-check</v-icon>
+          <v-icon>{{mdiCheckboxMarked}}</v-icon>
         </v-list-item-action>
       </template>
     </v-autocomplete>
@@ -35,6 +43,7 @@
 <script>
 import constants from "../constants";
 import store from "../store";
+import { mdiCheckboxMarked, mdiRobot, mdiMagnify } from "@mdi/js";
 
 export default {
   name: "SearchBox",
@@ -43,8 +52,11 @@ export default {
       autocompleteTerm: "",
       autocompleteResults: [],
       isAutocompleteLoading: false,
+      showMachinery: false,
       entriesCount: "",
       constants: constants,
+      mdiCheckboxMarked: mdiCheckboxMarked,
+      mdiRobot: mdiRobot
     };
   },
   created: function() {
@@ -94,7 +106,6 @@ export default {
     getCount() {
       fetch(constants.apiBaseUrl + constants.apiCountPath, {
         method: "GET",
-        mode: "cors",
         cache: "default"
       })
         .then(response => response.json())
