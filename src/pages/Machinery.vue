@@ -83,10 +83,10 @@ export default {
       }
     },
     runMachinery(searchTerm) {
-      if (searchTerm === undefined || searchTerm === null || searchTerm === '') { return; }
       this.fetchApi(
         constants.apiBaseUrl + constants.apiMachineryPath + searchTerm,
       );
+      window.scrollTo(0, 330);
     },
     fetchApi(url) {
       if (url === undefined || url === null || url === '') return;
