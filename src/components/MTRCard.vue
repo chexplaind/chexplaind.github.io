@@ -48,24 +48,24 @@
 
 <script>
 export default {
-  name: "MTRCard",
+  name: 'MTRCard',
   props: {
-    post: Object
+    post: Object,
   },
   methods: {
     prettifyTag(tagName) {
-      tagName = tagName.replace("_", " ").replace("2", "-to-");
+      tagName = tagName.replace('_', ' ').replace('2', '-to-');
       return tagName;
     },
     getBestTextColor(hexcolor) {
-      hexcolor = hexcolor.replace("#", "");
-      var r = parseInt(hexcolor.substr(0, 2), 16);
-      var g = parseInt(hexcolor.substr(2, 2), 16);
-      var b = parseInt(hexcolor.substr(4, 2), 16);
-      var yiq = (r * 299 + g * 587 + b * 114) / 1000;
-      return yiq >= 130 ? "default" : "WhiteSmoke";
-    }
-  }
+      hexcolor = hexcolor.replace('#', '');
+      const r = parseInt(hexcolor.substr(0, 2), 16);
+      const g = parseInt(hexcolor.substr(2, 2), 16);
+      const b = parseInt(hexcolor.substr(4, 2), 16);
+      const yiq = (r * 299 + g * 587 + b * 114) / 1000;
+      return yiq >= 130 ? 'default' : 'WhiteSmoke';
+    },
+  },
 };
 </script>
 

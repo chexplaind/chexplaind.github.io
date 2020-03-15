@@ -8,7 +8,7 @@
           <!-- <template v-for="(item, index) in items.slice(0, 6)">
             <v-subheader v-if="item.header" :key="item.header">{{ item.header }}</v-subheader>
             <v-divider v-else-if="item.divider" :key="index" :inset="item.inset"></v-divider>
-            
+
           </template> -->
         </v-list>
       </v-card>
@@ -18,25 +18,25 @@
 </template>
 
 <script>
-import PostCard from "../components/PostCard";
-import CharacterCard from "../components/CharacterCard";
-import constants from "../constants";
+import PostCard from '../components/PostCard';
+import CharacterCard from '../components/CharacterCard';
+import constants from '../constants';
 
 export default {
-  name: "PostDetail",
+  name: 'PostDetail',
   components: {
-    PostCard
+    PostCard,
   },
   data() {
     return {
       loading: false,
-      post: Object
+      post: Object,
     };
   },
   props: {
-    postTitle: "",
-    breadcrumbs: Array
-  }
+    postTitle: ,
+    breadcrumbs: Array,
+  },
 };
 </script>
 

@@ -8,16 +8,16 @@
 </template>
 
 <script>
-import { mdiInstagram } from "@mdi/js";
+import { mdiInstagram } from '@mdi/js';
 
 export default {
-  name: "InstagramBadge",
+  name: 'InstagramBadge',
   props: {
-    hasText: Boolean
+    hasText: Boolean,
   },
   data: () => ({
-    iconPath: mdiInstagram
-  })
+    iconPath: mdiInstagram,
+  }),
 };
 </script>
 

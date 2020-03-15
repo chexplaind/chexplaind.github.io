@@ -7,18 +7,18 @@
       <span class="grey--text">直譯詞典</span>
     </h1>
     <v-divider class="fat-divider" />
-    
+
   </div>
 </template>
 
 <script>
-import InstagramBadge from "./InstagramBadge.vue";
+import InstagramBadge from './InstagramBadge.vue';
 
 export default {
-  name: "Header",
+  name: 'Header',
   components: {
-    InstagramBadge
-  }
+    InstagramBadge,
+  },
 };
 </script>
 

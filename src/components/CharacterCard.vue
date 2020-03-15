@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-list-item>
-      <v-list-item-avatar>
+      <v-list-item-avatar tile>
         <span class="titleZh">{{character}}</span>
       </v-list-item-avatar>
       <v-list-item-content>
@@ -15,12 +15,12 @@
 
 <script>
 export default {
-  name: "CharacterCard",
+  name: 'CharacterCard',
   props: {
     character: String,
     explanation: String,
-    pinyin: String
-  }
+    pinyin: String,
+  },
 };
 </script>
 
@@ -29,7 +29,7 @@ export default {
   display: inline-block;
   text-align: left;
   margin: 0 0.2em 0 0;
-  font-size: 2.65em;
+  font-size: 2.4em;
   vertical-align: middle;
 }
 

@@ -40,16 +40,16 @@
 
 <script>
 export default {
-  name: "PostCard",
+  name: 'PostCard',
   props: {
-    post: Object
+    post: Object,
   },
   methods: {
     prettifyTag(tagName) {
-      tagName = tagName.replace("_", " ").replace("2", "-to-");
+      tagName = tagName.replace('_', ' ').replace('2', '-to-');
       return tagName;
-    }
-  }
+    },
+  },
 };
 </script>
 

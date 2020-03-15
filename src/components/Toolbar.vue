@@ -13,21 +13,21 @@
 </template>
 
 <script>
-import InstagramBadge from "./InstagramBadge.vue";
-import SearchBox from "./SearchBox.vue";
-import { mdiMagnify } from "@mdi/js";
+import { mdiMagnify } from '@mdi/js';
+import InstagramBadge from './InstagramBadge.vue';
+import SearchBox from './SearchBox.vue';
 
 export default {
-  name: "Toolbar",
+  name: 'Toolbar',
   components: {
     InstagramBadge,
-    SearchBox
+    SearchBox,
   },
-  data(){
+  data() {
     return {
-      mdiMagnify: mdiMagnify
-    }
-  }
+      mdiMagnify,
+    };
+  },
 };
 </script>
 

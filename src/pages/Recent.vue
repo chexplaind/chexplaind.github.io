@@ -6,23 +6,23 @@
 </template>
 
 <script>
-import PostGrid from "../components/PostGrid";
-import constants from "../constants";
-import store from "../store";
+import PostGrid from '../components/PostGrid';
+import constants from '../constants';
+import store from '../store';
 
 export default {
-  name: "Recent",
+  name: 'Recent',
   components: {
-    PostGrid
+    PostGrid,
   },
   data() {
     return {
-      constants: constants,
+      constants,
     };
   },
-  created: function() {
+  created() {
     store.clearSearchUrl();
-  }
+  },
 };
 </script>
 

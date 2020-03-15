@@ -8,52 +8,50 @@
 </template>
 
 <script>
-import PostGrid from "../components/PostGrid.vue";
-import constants from "../constants";
-import store from "../store";
+import PostGrid from '../components/PostGrid.vue';
+import constants from '../constants';
+import store from '../store';
 
 export default {
-  name: "Tag",
+  name: 'Tag',
   components: {
-    PostGrid
+    PostGrid,
   },
   watch: {
     $route(to, from) {
       store.clearSearchUrl();
       this.refreshTag(to);
-    }
+    },
   },
   computed: {
-    tagUrl: function() {
+    tagUrl() {
       return constants.apiBaseUrl + constants.apiGetByTagPath + this.tag;
-    }
+    },
   },
   data() {
     return {
-      constants: constants,
-      tag: ""
+      constants,
+      tag: '',
     };
   },
-  created: function() {
+  created() {
     store.clearSearchUrl();
     this.refreshTag(this.$route);
   },
   methods: {
-    refreshTag: function(to) {
-      var tagName = to.params.tagName;
+    refreshTag(to) {
+      const { tagName } = to.params;
       if (tagName) {
         this.tag = tagName;
       }
     },
     expandTag(tagName) {
-      tagName = tagName.replace("_", " ");
-      if (tagName === "E2C")
-        return "E-to-C: Translated from Foreign Language to Chinese";
-      if (tagName === "C2E")
-        return "C-to-E: Translated from Chinese to English";
+      tagName = tagName.replace('_', ' ');
+      if (tagName === 'E2C') { return 'E-to-C: Translated from Foreign Language to Chinese'; }
+      if (tagName === 'C2E') { return 'C-to-E: Translated from Chinese to English'; }
       return tagName;
-    }
-  }
+    },
+  },
 };
 </script>
 

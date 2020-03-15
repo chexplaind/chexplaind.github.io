@@ -19,29 +19,29 @@
 </template>
 
 <script>
-import Header from "./components/Header";
-import About from "./components/About";
-import PostGrid from "./components/PostGrid";
-import Footer from "./components/Footer";
-import Toolbar from "./components/Toolbar";
-import constants from "./constants";
-import store from "./store";
+import Header from './components/Header';
+import About from './components/About';
+import PostGrid from './components/PostGrid';
+import Footer from './components/Footer';
+import Toolbar from './components/Toolbar';
+import constants from './constants';
+import store from './store';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     Header,
     About,
     PostGrid,
     Footer,
-    Toolbar
+    Toolbar,
   },
   data() {
     return {
-      constants: constants,
-      sharedState: store.state
+      constants,
+      sharedState: store.state,
     };
-  }
+  },
 };
 </script>
 

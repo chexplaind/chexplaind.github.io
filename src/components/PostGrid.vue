@@ -18,50 +18,50 @@
 </template>
 
 <script>
-import PostCard from "./PostCard";
-import MTRCard from "./MTRCard"
+import PostCard from './PostCard';
+import MTRCard from './MTRCard';
 
 export default {
-  name: "PostGrid",
+  name: 'PostGrid',
   components: {
     PostCard,
-    MTRCard
+    MTRCard,
   },
   data() {
     return {
       loading: false,
-      posts: []
+      posts: [],
     };
   },
   props: {
     title: String,
     fetchUrl: String,
-    showCount: Boolean
+    showCount: Boolean,
   },
-  created: function() {
+  created() {
     this.fetchApi(this.fetchUrl);
   },
   watch: {
     fetchUrl(val) {
       this.fetchApi(this.fetchUrl);
-    }
+    },
   },
   methods: {
     fetchApi(url) {
-      if (url === undefined || url === null || url === "") return;
+      if (url === undefined || url === null || url === '') return;
       this.loading = true;
       fetch(url, {
-        method: "GET",
-        cache: "default"
+        method: 'GET',
+        cache: 'default',
       })
         .then(response => response.json())
-        .then(json => {
+        .then((json) => {
           this.posts = json;
           this.loading = false;
         })
-        .catch(error => console.error("Backend Error:", error));
-    }
-  }
+        .catch(error => console.error('Backend Error:', error));
+    },
+  },
 };
 </script>
 

@@ -40,31 +40,31 @@
 </template>
 
 <script>
-import constants from "../constants";
-import store from "../store";
-import CharacterCard from "../components/CharacterCard";
-import { mdiClose, mdiRobot, mdiHeartBroken } from "@mdi/js";
+import { mdiClose, mdiRobot, mdiHeartBroken } from '@mdi/js';
+import constants from '../constants';
+import store from '../store';
+import CharacterCard from '../components/CharacterCard';
 
 export default {
-  name: "Recent",
+  name: 'Recent',
   components: {
-    CharacterCard
+    CharacterCard,
   },
   data() {
     return {
-      searchTerm: "",
+      searchTerm: '',
       isLoading: false,
       isError: false,
-      responseTitleZh: "",
+      responseTitleZh: '',
       responseCharacters: [],
-      responseSourceLanguage: "",
-      constants: constants,
-      mdiClose: mdiClose,
-      mdiRobot: mdiRobot,
-      mdiHeartBroken: mdiHeartBroken
+      responseSourceLanguage: '',
+      constants,
+      mdiClose,
+      mdiRobot,
+      mdiHeartBroken,
     };
   },
-  created: function() {
+  created() {
     store.clearSearchUrl();
     this.refreshSearchTerm(this.$route);
   },
@@ -72,44 +72,43 @@ export default {
     $route(to, from) {
       store.clearSearchUrl();
       this.refreshSearchTerm(to);
-    }
+    },
   },
   methods: {
-    refreshSearchTerm: function(to) {
-      var searchTerm = to.params.searchTerm;
+    refreshSearchTerm(to) {
+      const { searchTerm } = to.params;
       if (searchTerm) {
         this.searchTerm = searchTerm;
         this.runMachinery(searchTerm);
       }
     },
     runMachinery(searchTerm) {
-      if (searchTerm === undefined || searchTerm === null || searchTerm === "")
-        return;
+      if (searchTerm === undefined || searchTerm === null || searchTerm === '') { return; }
       this.fetchApi(
-        constants.apiBaseUrl + constants.apiMachineryPath + searchTerm
+        constants.apiBaseUrl + constants.apiMachineryPath + searchTerm,
       );
     },
     fetchApi(url) {
-      if (url === undefined || url === null || url === "") return;
+      if (url === undefined || url === null || url === '') return;
       this.isLoading = true;
       this.isError = false;
       fetch(url, {
-        method: "GET",
-        cache: "default"
+        method: 'GET',
+        cache: 'default',
       })
         .then(response => response.json())
-        .then(json => {
+        .then((json) => {
           this.isLoading = false;
           this.responseTitleZh = json.titleZh;
           this.responseCharacters = json.characters;
           this.responseSourceLanguage = json.sourceLanguage;
         })
-        .catch(error => {
+        .catch((error) => {
           this.isLoading = false;
           this.isError = true;
         });
-    }
-  }
+    },
+  },
 };
 </script>
 
