@@ -6,10 +6,9 @@
       :loading="isAutocompleteLoading"
       :label="entriesCount"
       :menu-props="{ top: true }"
-      hide-selected
       hide-details
-      :hide-no-data="!!autocompleteResults.length || !autocompleteTerm"
       outlined
+      :hide-no-data="!!autocompleteResults.length || !autocompleteTerm"
       placeholder="Type here to search me..."
     >
       <template v-slot:no-data>
@@ -18,7 +17,7 @@
             No results for "{{autocompleteTerm}}".<br/>
             <router-link class="caption"
               :to="{ name: 'machinery', params: { searchTerm: autocompleteTerm }}"
-            >Try machine translation?</router-link>
+            >Try machine interpretation?</router-link>
           </v-list-item-title>
           <v-list-item-action>
             <router-link :to="{ name: 'machinery', params: { searchTerm: autocompleteTerm }}">
