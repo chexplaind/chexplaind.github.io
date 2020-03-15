@@ -18,6 +18,9 @@
       <router-link :to="{ name: 'tag', params: { tagName: 'europe' }}">
         <v-chip label link>Europe</v-chip>
       </router-link>
+      <router-link :to="{ name: 'tag', params: { tagName: 'asia' }}">
+        <v-chip label link>Asia</v-chip>
+      </router-link>
     </v-chip-group>
     <p>
       These could be translated by
@@ -30,7 +33,7 @@
 
 <script>
 export default {
-  name: 'About',
+  name: "About"
 };
 </script>
 

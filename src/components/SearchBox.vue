@@ -116,7 +116,7 @@ export default {
 #search-container {
   padding: 0px 5px;
   width: 80%;
-  max-width: 600px;
+  max-width: 620px;
 }
 
 #search-title {

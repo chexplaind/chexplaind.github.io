@@ -31,7 +31,7 @@
         :key="tag"
         :to="{ name: 'tag', params: { tagName: tag }}"
       >
-        <v-chip link class="tag">{{ prettifyTag(tag) }}</v-chip>
+        <v-chip link outlined class="tag">{{ prettifyTag(tag) }}</v-chip>
       </router-link>
     </v-chip-group>
     <p class="credit">{{post.credit}}</p>
