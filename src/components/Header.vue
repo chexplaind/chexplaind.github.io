@@ -13,13 +13,13 @@
 </template>
 
 <script>
-import InstagramBadge from "./InstagramBadge.vue";
+import InstagramBadge from './InstagramBadge.vue';
 
 export default {
-  name: "Header",
+  name: 'Header',
   components: {
-    InstagramBadge
-  }
+    InstagramBadge,
+  },
 };
 </script>
 

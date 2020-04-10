@@ -39,21 +39,21 @@
 </template>
 
 <script>
-import { mdiCheckboxMarked, mdiRobot, mdiMagnify } from "@mdi/js";
-import constants from "../constants";
-import store from "../store";
+import { mdiCheckboxMarked, mdiRobot, mdiMagnify } from '@mdi/js';
+import constants from '../constants';
+import store from '../store';
 
 export default {
-  name: "SearchBox",
+  name: 'SearchBox',
   data() {
     return {
-      autocompleteTerm: "",
+      autocompleteTerm: '',
       autocompleteResults: [],
       isAutocompleteLoading: false,
-      entriesCount: "",
+      entriesCount: '',
       constants,
       mdiCheckboxMarked,
-      mdiRobot
+      mdiRobot,
     };
   },
   created() {
@@ -62,67 +62,67 @@ export default {
   watch: {
     autocompleteTerm(val) {
       this.handleAutoComplete(val);
-    }
+    },
   },
   methods: {
     handleAutoComplete(name) {
       this.doAutocomplete(name);
       if (this.autocompleteResults.includes(name)) {
         store.setSearchUrl(
-          constants.apiBaseUrl +
-            constants.apiSearchPath +
-            encodeURIComponent(name)
+          constants.apiBaseUrl
+            + constants.apiSearchPath
+            + encodeURIComponent(name),
         );
         window.scrollTo(0, 330);
       }
     },
     doAutocomplete(name) {
-      if (name === undefined || name === null || name === "") return;
+      if (name === undefined || name === null || name === '') return;
       this.isAutocompleteLoading = true;
       fetch(
-        constants.apiBaseUrl +
-          constants.apiAutocompletePath +
-          encodeURIComponent(name),
+        constants.apiBaseUrl
+          + constants.apiAutocompletePath
+          + encodeURIComponent(name),
         {
-          method: "GET",
-          cache: "default"
-        }
+          method: 'GET',
+          cache: 'default',
+        },
       )
         .then(response => response.json())
         .then(
-          json => (this.autocompleteResults = json.map(value => value.text))
+          json => (this.autocompleteResults = json.map(value => value.text)),
         )
-        .catch(error => console.error("Backend Error:", error))
+        .catch(error => console.error('Backend Error:', error))
         .finally(() => {
           this.isAutocompleteLoading = false;
         });
     },
     getCount() {
       fetch(constants.apiBaseUrl + constants.apiCountPath, {
-        method: "GET",
-        cache: "default"
+        method: 'GET',
+        cache: 'default',
       })
         .then(response => response.json())
         .then(json => (this.entriesCount = `${json} entries in total`))
-        .catch(error => console.error("Backend Error:", error));
+        .catch(error => console.error('Backend Error:', error));
     },
     goToMachinery() {
-      let machineryTerm = this.autocompleteTerm;
+      const machineryTerm = this.autocompleteTerm;
       if (
-        machineryTerm === undefined ||
-        machineryTerm === null ||
-        machineryTerm === ""
+        machineryTerm === undefined
+        || machineryTerm === null
+        || machineryTerm === ''
       ) {
         return;
       }
       this.$router.push({
-        name: "machinery",
+        name: 'machinery',
         params: {
-          searchTerm: machineryTerm
-        }
+          searchTerm: machineryTerm,
+        },
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
