@@ -2,6 +2,8 @@
 
 The goal of this project is to showcase some of the depth and accidental humour hidden in the Chinese Language today.
 
+Also on: https://www.instagram.com/chexplaind/
+
 ## Content Contributions
 
 Entries are curated manually at the moment. 
