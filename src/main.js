@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import vuetify from './plugins/vuetify';
-import App from './App';
-import Tag from './pages/Tag';
-import Recent from './pages/Recent';
-import Machinery from './pages/Machinery';
+import App from './App.vue';
+import Tag from './pages/Tag.vue';
+import Recent from './pages/Recent.vue';
+import Machinery from './pages/Machinery.vue';
 
 Vue.config.productionTip = false;
 

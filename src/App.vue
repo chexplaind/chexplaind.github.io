@@ -19,11 +19,11 @@
 </template>
 
 <script>
-import Header from './components/Header';
-import About from './components/About';
-import PostGrid from './components/PostGrid';
-import Footer from './components/Footer';
-import Toolbar from './components/Toolbar';
+import Header from './components/Header.vue';
+import About from './components/About.vue';
+import PostGrid from './components/PostGrid.vue';
+import Footer from './components/Footer.vue';
+import Toolbar from './components/Toolbar.vue';
 import constants from './constants';
 import store from './store';
 

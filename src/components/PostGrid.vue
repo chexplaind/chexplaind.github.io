@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import PostCard from './PostCard';
-import MTRCard from './MTRCard';
+import PostCard from './PostCard.vue';
+import MTRCard from './MTRCard.vue';
 
 export default {
   name: 'PostGrid',
@@ -42,7 +42,7 @@ export default {
     this.fetchApi(this.fetchUrl);
   },
   watch: {
-    fetchUrl(val) {
+    fetchUrl() {
       this.fetchApi(this.fetchUrl);
     },
   },

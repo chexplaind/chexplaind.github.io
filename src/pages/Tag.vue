@@ -18,7 +18,7 @@ export default {
     PostGrid,
   },
   watch: {
-    $route(to, from) {
+    $route(to) {
       store.clearSearchUrl();
       this.refreshTag(to);
     },
@@ -46,10 +46,10 @@ export default {
       }
     },
     expandTag(tagName) {
-      tagName = tagName.replace('_', ' ');
-      if (tagName === 'E2C') { return 'E-to-C: Translated from Foreign Language to Chinese'; }
-      if (tagName === 'C2E') { return 'C-to-E: Translated from Chinese to English'; }
-      return tagName;
+      const processedTagName = tagName.replace('_', ' ');
+      if (processedTagName === 'E2C') { return 'E-to-C: Translated from Foreign Language to Chinese'; }
+      if (processedTagName === 'C2E') { return 'C-to-E: Translated from Chinese to English'; }
+      return processedTagName;
     },
   },
 };
