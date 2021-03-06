@@ -88,7 +88,7 @@ export default {
       explanation: "Straight Translate Vocabulary Book",
       jyutping: "zik6 jik6 ci4 din2",
       pinyin: "zhí yì cí diǎn",
-      backgroundHex: "#ddadad66",
+      backgroundHex: "#ffd1dc",
     },
   }),
 };

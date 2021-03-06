@@ -73,7 +73,7 @@ export default {
             constants.apiSearchPath +
             encodeURIComponent(name)
         );
-        window.scrollTo(0, 330);
+        window.scrollTo(0, 630);
       }
     },
     doAutocomplete(name) {
