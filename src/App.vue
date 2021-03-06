@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
-    <v-content class="app-content">
-      <Header />
+    <v-main class="app-content">
+      <!-- <Header /> -->
       <About />
       <div id="search-results-container">
         <PostGrid
@@ -13,13 +13,13 @@
       </div>
       <router-view />
       <Footer />
-    </v-content>
+    </v-main>
     <Toolbar />
   </v-app>
 </template>
 
 <script>
-import Header from './components/Header.vue';
+// import Header from './components/Header.vue';
 import About from './components/About.vue';
 import PostGrid from './components/PostGrid.vue';
 import Footer from './components/Footer.vue';
@@ -30,7 +30,7 @@ import store from './store';
 export default {
   name: 'App',
   components: {
-    Header,
+    // Header,
     About,
     PostGrid,
     Footer,
