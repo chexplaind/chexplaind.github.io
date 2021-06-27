@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card class="card">
+    <v-card class="card" elevation="0">
       <div class="canvas" :style="{'background-color': post.backgroundHex}">
         <div class="icons">
           <img
@@ -74,7 +74,6 @@ export default {
   padding: 7vh 0;
   min-width: 355px;
   max-width: 600px;
-  box-shadow: 0;
   margin: auto;
 }
 

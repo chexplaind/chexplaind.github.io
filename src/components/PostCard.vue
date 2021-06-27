@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card class="card" :style="{'background': post.backgroundHex}">
+    <v-card class="card" :style="{'background': post.backgroundHex}" elevation="0">
       <div class="icons">
         <img
           v-for="icon in post.icons"
@@ -58,7 +58,6 @@ export default {
   padding: 7vh 0;
   min-width: 355px;
   max-width: 600px;
-  box-shadow: 0;
   margin: auto;
 }
 
