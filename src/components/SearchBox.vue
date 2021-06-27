@@ -14,13 +14,15 @@
       <template v-slot:no-data>
         <v-list-item>
           <v-list-item-title class="text-left">
-            No results for "{{autocompleteTerm}}".
+            No results for "{{ autocompleteTerm }}".
             <br />
-            <a @click="goToMachinery()" class="caption">Try machine interpretation?</a>
+            <a @click="goToMachinery()" class="caption"
+              >Try machine interpretation?</a
+            >
           </v-list-item-title>
           <v-list-item-action @click="goToMachinery()">
             <div>
-              <v-icon>{{mdiRobot}}</v-icon>
+              <v-icon>{{ mdiRobot }}</v-icon>
               <v-chip x-small link>alpha</v-chip>
             </div>
           </v-list-item-action>
@@ -28,10 +30,13 @@
       </template>
       <template v-slot:item="{ item }">
         <v-list-item-content>
-          <v-list-item-title v-text="item" class="text-left"></v-list-item-title>
+          <v-list-item-title
+            v-text="item"
+            class="text-left"
+          ></v-list-item-title>
         </v-list-item-content>
         <v-list-item-action>
-          <v-icon>{{mdiCheckboxMarked}}</v-icon>
+          <v-icon>{{ mdiCheckboxMarked }}</v-icon>
         </v-list-item-action>
       </template>
     </v-autocomplete>
@@ -106,7 +111,9 @@ export default {
         .then((json) => {
           this.entriesCount = `${json} entries in total`;
         })
-        .catch((error) => console.error("Backend Error:", error));
+        .catch((error) => {
+          return console.error("Backend Error:", error);
+        });
     },
     goToMachinery() {
       const machineryTerm = this.autocompleteTerm;

@@ -58,6 +58,7 @@ export default {
   padding: 7vh 0;
   min-width: 355px;
   max-width: 600px;
+  box-shadow: 0;
   margin: auto;
 }
 
