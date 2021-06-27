@@ -12,7 +12,7 @@
         <v-avatar left>
           <v-icon>{{ storeIconPath }}</v-icon>
         </v-avatar>
-        Sticker / Magnet Store
+        Merch Store
       </v-chip>
       <v-chip
         href="https://www.instagram.com/chexplaind/"

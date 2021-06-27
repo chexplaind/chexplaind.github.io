@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card class="card" :style="{'background': post.backgroundHex}" elevation="0">
+    <v-card class="card rounded-0" :style="{'background': post.backgroundHex}" elevation="0">
       <div class="icons">
         <img
           v-for="icon in post.icons"
