@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import PostGrid from '../components/PostGrid';
+import PostGrid from '../components/PostGrid.vue';
 import constants from '../constants';
 import store from '../store';
 

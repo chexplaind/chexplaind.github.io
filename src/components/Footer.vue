@@ -7,7 +7,8 @@
         target="_blank"
         rel="noreferrer"
       >CC BY-NC 4.0</a> license
-      <br />Based on personal research and interpretations, Chinese characters often have multiple meanings.
+      <br />Based on personal research and interpretations,
+      Chinese characters often have multiple meanings.
       <a
         href="https://github.com/chexplaind/chexplaindata"
         target="_blank"

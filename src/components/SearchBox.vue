@@ -93,11 +93,11 @@ export default {
           cache: "default",
         }
       )
-        .then((response) => response.json())
+        .then(response => response.json())
         .then((json) => {
-          this.autocompleteResults = json.map((value) => value.text);
+          this.autocompleteResults = json.map(value => value.text);
         })
-        .catch((error) => console.error("Backend Error:", error))
+        .catch(error => console.error("Backend Error:", error))
         .finally(() => {
           this.isAutocompleteLoading = false;
         });
@@ -107,13 +107,11 @@ export default {
         method: "GET",
         cache: "default",
       })
-        .then((response) => response.json())
+        .then(response => response.json())
         .then((json) => {
           this.entriesCount = `${json} entries in total`;
         })
-        .catch((error) => {
-          return console.error("Backend Error:", error);
-        });
+        .catch(error => console.error("Backend Error:", error));
     },
     goToMachinery() {
       const machineryTerm = this.autocompleteTerm;

@@ -21,7 +21,8 @@
         </v-row>
         <v-progress-circular v-if="isLoading" indeterminate color="primary" />
         <div v-else-if="isError" class="d-flex align-center error-status">
-          <v-icon>{{mdiHeartBroken}}</v-icon>&ensp;machine translation did not work for this search term :(
+          <v-icon>{{mdiHeartBroken}}</v-icon>&ensp;
+          machine translation did not work for this search term :(
         </div>
         <v-list v-else>
           <v-divider />
@@ -43,7 +44,7 @@
 import { mdiClose, mdiRobot, mdiHeartBroken } from '@mdi/js';
 import constants from '../constants';
 import store from '../store';
-import CharacterCard from '../components/CharacterCard';
+import CharacterCard from '../components/CharacterCard.vue';
 
 export default {
   name: 'Recent',
@@ -69,7 +70,7 @@ export default {
     this.refreshSearchTerm(this.$route);
   },
   watch: {
-    $route(to, from) {
+    $route(to, _from) {
       store.clearSearchUrl();
       this.refreshSearchTerm(to);
     },
@@ -103,7 +104,7 @@ export default {
           this.responseCharacters = json.characters;
           this.responseSourceLanguage = json.sourceLanguage;
         })
-        .catch((error) => {
+        .catch((_error) => {
           this.isLoading = false;
           this.isError = true;
         });
