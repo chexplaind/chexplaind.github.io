@@ -1,6 +1,6 @@
 <template>
   <div class="about-content">
-    <PostCard :post="titlePost" aspect-ratio="3 / 2" />
+    <PostCard :post="titlePost" :aspect-ratio="postcardAspectRatio" />
     <v-chip-group :style="{'margin': 'auto', 'max-width': '360px', 'padding-bottom': '16px'}">
       <v-chip
         href="https://www.redbubble.com/people/chexplaind/explore"
@@ -91,6 +91,11 @@ export default {
       backgroundHex: "#ffe680aa",
     },
   }),
+  computed: {
+    postcardAspectRatio() {
+      return this.$vuetify.breakpoint.xsOnly ? "1 / 1" : "2 / 1";
+    },
+  },
 };
 </script>
 

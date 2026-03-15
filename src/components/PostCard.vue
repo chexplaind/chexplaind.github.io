@@ -19,21 +19,20 @@
         </div>
         <div class="levelEn">
           <p class="explanation">{{ post.explanation }}</p>
-          <p class="titleEn">
-            <span>[ENG&thinsp;|&thinsp;英]&ensp;{{ post.titleEn }}</span>
-            <span v-if="post.titleEnAlts && post.titleEnAlts.length" class="titleEn">,
+          <div class="titleEn">
+            <span>[ENG&thinsp;|&thinsp;英]&ensp;<b>{{ post.titleEn }}</b></span>
+            <span v-if="post.titleEnAlts && post.titleEnAlts.length" class="titleEnAlts">,
               <span v-for="(titleEnAlt, index) in post.titleEnAlts" :key="`${titleEnAlt}-${index}`">
                 {{ titleEnAlt }}<span v-if="index < post.titleEnAlts.length - 1">, </span>
               </span>
             </span>
-          </p>
-          <div
-            v-if="post.storyEn"
-            class="storyEn"
-            v-html="renderMarkdown(post.storyEn)"
-          />
+          </div>
         </div>
+
       </div>
+        <div class="levelStory">
+          <div v-if="post.storyEn" class="storyEn" v-html="renderMarkdown(post.storyEn)" />
+        </div>
     </v-card>
     <v-chip-group column class="tags-container">
       <router-link v-for="tag in post.tags" :key="tag" :to="{ name: 'tag', params: { tagName: tag } }">
@@ -128,37 +127,56 @@ div.words {
   display: inline-block;
   margin: 0 auto;
   text-align: left;
-  padding: 0 9%;
+  padding: 3% 10% 0 10%;
+}
+
+div.levelStory {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
+  padding: 0 15% 3% 15%;
+}
+
+div.levelZh {
+  display: flex;
+  align-items: flex-start;
 }
 
 p.titleZh {
   display: inline-block;
   text-align: left;
   margin: 0 0.2em 0 0;
-  font-size: 2.65em;
+  font-size: 2.6em;
   vertical-align: middle;
 }
 
 p.pinyin {
   display: inline-block;
   text-align: left;
-  font-size: 0.75em;
+  font-size: 0.8em;
   color: #5d5d5d;
   margin: 1em 0 0 0.25em;
   vertical-align: middle;
 }
 
-p.titleEn {
+.titleEn {
   display: block;
-  font-size: 0.85em;
+  font-size: 0.9em;
   color: #5d5d5d;
+  white-space: nowrap;
+}
+
+.titleEnAlts {
+  display: inline;
 }
 
 .storyEn {
-  margin-top: 0.4em;
-  font-size: 0.85em;
+  border-top: 1px solid rgba(93, 93, 93, 0.35);
+  padding-top: 1em;
+  margin-top: 0.75em;
+  font-size: 0.9em;
   color: #5d5d5d;
-  line-height: 1.35;
+  line-height: 1.5;
 }
 
 p.explanation {
