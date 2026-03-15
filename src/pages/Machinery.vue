@@ -131,10 +131,10 @@ export default {
 
 .titleEn {
   font-size: 0.75em;
-  color: grey;
+  color: #5d5d5d;
 }
 
 p.caption {
-  color: lightgrey;
+  color: #5d5d5d;
 }
 </style>

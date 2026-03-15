@@ -37,7 +37,7 @@ export default {
   display: inline-block;
   text-align: left;
   font-size: 0.67em;
-  color: grey;
+  color: #5d5d5d;
   margin: 1em 0 0 0.25em;
   vertical-align: middle;
 }

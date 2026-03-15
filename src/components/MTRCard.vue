@@ -88,7 +88,7 @@ export default {
 .credit {
   display: block;
   text-align: left;
-  color: lightgray;
+  color: #5d5d5d;
   font-size: 0.75em;
 }
 
@@ -118,13 +118,13 @@ p.explanation {
 }
 
 p.titleEn {
-  color: grey;
+  color: #5d5d5d;
   margin: 0;
 }
 
 p.pinyin {
   font-size: 0.67em;
-  color: grey;
+  color: #5d5d5d;
   margin: 0;
 }
 
