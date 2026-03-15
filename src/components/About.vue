@@ -1,6 +1,6 @@
 <template>
   <div class="about-content">
-    <PostCard :post="titlePost" aspect-ratio="2 / 1" />
+    <PostCard :post="titlePost" aspect-ratio="3 / 2" />
     <v-chip-group :style="{'margin': 'auto', 'max-width': '360px', 'padding-bottom': '16px'}">
       <v-chip
         href="https://www.redbubble.com/people/chexplaind/explore"
