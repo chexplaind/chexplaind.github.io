@@ -27,6 +27,11 @@
               </span>
             </span>
           </p>
+          <div
+            v-if="post.storyEn"
+            class="storyEn"
+            v-html="renderMarkdown(post.storyEn)"
+          />
         </div>
       </div>
     </v-card>
@@ -53,6 +58,29 @@ export default {
     prettifyTag(tagName) {
       tagName = tagName.replace('_', ' ').replace('2', '-to-');
       return tagName;
+    },
+    escapeHtml(text) {
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    },
+    renderMarkdown(text) {
+      if (!text) {
+        return '';
+      }
+      let html = this.escapeHtml(String(text));
+      html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+      html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+      html = html.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+      html = html.replace(
+        /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+        '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>',
+      );
+      html = html.replace(/\n/g, '<br />');
+      return html;
     },
   },
 };
@@ -124,6 +152,13 @@ p.titleEn {
   display: block;
   font-size: 0.85em;
   color: #5d5d5d;
+}
+
+.storyEn {
+  margin-top: 0.4em;
+  font-size: 0.85em;
+  color: #5d5d5d;
+  line-height: 1.35;
 }
 
 p.explanation {
