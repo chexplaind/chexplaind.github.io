@@ -1,10 +1,10 @@
 <template>
   <div class="grid-container">
     <v-divider />
-    <v-subheader inset class="caps">
+    <h2 class="caps">
       {{ title }}
-      <span v-if="showCount">&nbsp;({{posts.length}} entries)</span>
-    </v-subheader>
+      <span v-if="showCount">&nbsp;({{ posts.length }} entries)</span>
+    </h2>
     <v-divider />
     <v-progress-linear v-if="loading" indeterminate />
     <p v-else-if="!posts.length" id="no-results">No results found.</p>

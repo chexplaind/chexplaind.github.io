@@ -33,7 +33,7 @@
         </p>
       </v-card-actions>
     </v-card>
-    <v-chip-group column class="tags-container">
+    <div class="tags-container">
       <router-link
         v-for="tag in post.tags"
         :key="tag"
@@ -41,7 +41,7 @@
       >
         <v-chip link class="tag">{{ prettifyTag(tag) }}</v-chip>
       </router-link>
-    </v-chip-group>
+    </div>
     <p class="credit">{{post.credit}}</p>
   </div>
 </template>
@@ -79,6 +79,9 @@ export default {
 
 .tags-container {
   margin: 6px 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .tag {

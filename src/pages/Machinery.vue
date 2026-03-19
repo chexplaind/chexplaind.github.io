@@ -1,7 +1,7 @@
 <template>
   <div id="machinery-container">
     <v-divider />
-    <v-subheader inset class="caps">Machinery</v-subheader>
+    <h2 class="caps">Machinery</h2>
     <v-divider />
     <v-card class="machinery-card">
       <v-container>
@@ -13,7 +13,7 @@
             {{searchTerm}}
           </v-card-title>
           <router-link :to="{ name: 'home'}">
-            <v-btn text>
+            <v-btn variant="text">
               back to home
               <v-icon>{{mdiClose}}</v-icon>
             </v-btn>
@@ -70,7 +70,7 @@ export default {
     this.refreshSearchTerm(this.$route);
   },
   watch: {
-    $route(to, _from) {
+    $route(to) {
       store.clearSearchUrl();
       this.refreshSearchTerm(to);
     },
@@ -104,7 +104,7 @@ export default {
           this.responseCharacters = json.characters;
           this.responseSourceLanguage = json.sourceLanguage;
         })
-        .catch((_error) => {
+        .catch(() => {
           this.isLoading = false;
           this.isError = true;
         });

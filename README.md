@@ -41,5 +41,10 @@ npm run test
 npm run lint
 ``` -->
 
+#### Preview production build locally
+```
+npm run preview
+```
+
 #### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+See [Vite Configuration Reference](https://vite.dev/config/).

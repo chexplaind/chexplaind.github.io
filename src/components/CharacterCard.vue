@@ -1,15 +1,17 @@
 <template>
   <div>
-    <v-list-item>
-      <v-list-item-avatar tile>
-        <span class="titleZh">{{character}}</span>
-      </v-list-item-avatar>
-      <v-list-item-content>
-        <v-list-item-title class="explanation">{{explanation}}</v-list-item-title>
-        <v-list-item-subtitle class="pinyin">[MAN]&ensp;{{pinyin}}</v-list-item-subtitle>
-      </v-list-item-content>
+    <v-list-item :title="explanation" :subtitle="`[MAN] ${pinyin || ''}`">
+      <template #prepend>
+        <span class="titleZh">{{ character }}</span>
+      </template>
+      <template #title>
+        <span class="explanation">{{ explanation }}</span>
+      </template>
+      <template #subtitle>
+        <span class="pinyin">[MAN]&ensp;{{ pinyin }}</span>
+      </template>
     </v-list-item>
-    <v-divider></v-divider>
+    <v-divider />
   </div>
 </template>
 

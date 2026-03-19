@@ -1,14 +1,13 @@
 <template>
   <div id="search-container">
     <v-autocomplete
-      outlined
-      hide-details
+      variant="outlined"
+      hide-details="auto"
       placeholder="Type here to search me..."
       :items="autocompleteResults"
-      :search-input.sync="autocompleteTerm"
+      v-model:search="autocompleteTerm"
       :loading="isAutocompleteLoading"
       :label="entriesCount"
-      :menu-props="{ top: true, closeOnContentClick: true, offsetY: true }"
       :hide-no-data="!!autocompleteResults.length || !autocompleteTerm"
     >
       <template v-slot:no-data>
@@ -20,24 +19,20 @@
               >Try machine interpretation?</a
             >
           </v-list-item-title>
-          <v-list-item-action @click="goToMachinery()">
-            <div>
+          <template #append>
+            <div class="d-flex align-center" @click="goToMachinery()">
               <v-icon>{{ mdiRobot }}</v-icon>
-              <v-chip x-small link>alpha</v-chip>
+              <v-chip size="x-small" class="ml-1">alpha</v-chip>
             </div>
-          </v-list-item-action>
+          </template>
         </v-list-item>
       </template>
-      <template v-slot:item="{ item }">
-        <v-list-item-content>
-          <v-list-item-title
-            v-text="item"
-            class="text-left"
-          ></v-list-item-title>
-        </v-list-item-content>
-        <v-list-item-action>
+      <template v-slot:item="{ props, item }">
+        <v-list-item v-bind="props" :title="item?.title ?? item?.raw ?? ''" class="text-left">
+          <template #append>
           <v-icon>{{ mdiCheckboxMarked }}</v-icon>
-        </v-list-item-action>
+          </template>
+        </v-list-item>
       </template>
     </v-autocomplete>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="badge">
-    <v-btn text icon color="pink" href="https://www.instagram.com/chexplaind/">
+    <v-btn variant="text" icon color="pink" href="https://www.instagram.com/chexplaind/">
       <v-icon>{{ iconPath }}</v-icon>
       <span class="d-none d-md-flex" v-if="hasText">&nbsp;@chexplaind</span>
     </v-btn>

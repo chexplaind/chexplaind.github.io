@@ -18,9 +18,7 @@
 </template>
 
 <script>
-import PostCard from '../components/PostCard';
-import CharacterCard from '../components/CharacterCard';
-import constants from '../constants';
+import PostCard from '../components/PostCard.vue';
 
 export default {
   name: 'PostDetail',
@@ -34,7 +32,7 @@ export default {
     };
   },
   props: {
-    postTitle: ,
+    postTitle: String,
     breadcrumbs: Array,
   },
 };

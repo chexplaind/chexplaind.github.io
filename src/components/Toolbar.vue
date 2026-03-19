@@ -1,9 +1,9 @@
 <template>
-  <v-app-bar bottom fixed height="84px">
+  <v-app-bar location="bottom" height="84">
     <v-toolbar-title class="d-none d-md-flex">
       <router-link :to="{ name: 'home'}">
         The Literal Chinese Dictionary
-        <span class="grey--text d-none d-lg-inline-flex"> | 直譯詞典</span>
+        <span class="text-grey d-none d-lg-inline-flex"> | 直譯詞典</span>
       </router-link>
     </v-toolbar-title>
     <v-spacer class="d-none d-md-flex" />
