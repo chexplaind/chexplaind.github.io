@@ -1,9 +1,11 @@
+import { reactive } from 'vue';
+
 const store = {
   debug: false,
-  state: {
+  state: reactive({
     searchUrl: '',
-    searchResults: Array,
-  },
+    searchResults: [],
+  }),
   setSearchUrl(newValue) {
     if (this.debug) console.log('setSearchUrl triggered with', newValue);
     this.state.searchUrl = newValue;

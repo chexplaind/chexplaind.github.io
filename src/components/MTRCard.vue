@@ -112,12 +112,14 @@ p.titleZh {
   letter-spacing: 0.1em;
   font-weight: 750;
   font-family: "Noto Serif TC", sans-serif;
+  margin: 0 0 0.3em;
 }
 
 p.explanation {
   font-size: 1.65em;
   font-weight: 600;
   font-family: Helvetica, sans-serif;
+  margin: 0;
 }
 
 p.titleEn {
