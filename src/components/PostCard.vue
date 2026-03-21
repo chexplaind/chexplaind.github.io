@@ -142,6 +142,7 @@ div.levelStory {
 
 div.levelZh {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
 }
 
@@ -151,6 +152,7 @@ p.titleZh {
   margin: 0 0.2em 0 0;
   font-size: 2.6em;
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 p.pinyin {
