@@ -78,5 +78,9 @@ describe('app smoke', () => {
     expect(text).toContain('Search Results');
     expect(text).toContain('Recent Posts');
     expect(text.indexOf('Search Results')).toBeLessThan(text.indexOf('Recent Posts'));
+
+    searchBox.vm.autocompleteTerm = '';
+    await nextTick();
+    expect(store.state.searchUrl).toContain('Search?name=hong%20kong');
   });
 });

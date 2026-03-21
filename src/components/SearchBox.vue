@@ -79,7 +79,6 @@ export default {
     doAutocomplete(name) {
       if (name === undefined || name === null || name === "") {
         this.autocompleteResults = [];
-        store.clearSearchUrl();
         return;
       }
       const requestId = ++this.autocompleteRequestId;
